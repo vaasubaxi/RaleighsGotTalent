@@ -1,8 +1,197 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Hero Section with Rotating Photos -->
+<div class="position-relative overflow-hidden" style="height: 90vh;">
+
+    <!-- Slideshow Images -->
+    <div id="heroSlideshow" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+
+        <div class="carousel-inner h-100">
+
+            <div class="carousel-item active h-100">
+                <img src="https://picsum.photos/1600/900?random=20"
+                     class="d-block w-100 h-100"
+                     style="object-fit: cover; filter: brightness(0.55);"
+                     alt="Slide 1" />
+            </div>
+
+            <div class="carousel-item h-100">
+                <img src="https://picsum.photos/1600/900?random=21"
+                     class="d-block w-100 h-100"
+                     style="object-fit: cover; filter: brightness(0.55);"
+                     alt="Slide 2" />
+            </div>
+
+            <div class="carousel-item h-100">
+                <img src="https://picsum.photos/1600/900?random=22"
+                     class="d-block w-100 h-100"
+                     style="object-fit: cover; filter: brightness(0.55);"
+                     alt="Slide 3" />
+            </div>
+
+            <div class="carousel-item h-100">
+                <img src="https://picsum.photos/1600/900?random=23"
+                     class="d-block w-100 h-100"
+                     style="object-fit: cover; filter: brightness(0.55);"
+                     alt="Slide 4" />
+            </div>
+
+        </div>
+
+        <!-- Slideshow Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroSlideshow" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroSlideshow" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <!-- Text Overlay on top of slideshow -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center text-white text-center">
+        <div class="container">
+            <p class="text-warning fw-bold fs-5 mb-2 text-uppercase letter-spacing">
+                Annual Dance Competition
+            </p>
+            <h1 class="display-1 fw-bold mb-3">
+                Raleigh's Got Talent
+            </h1>
+            <p class="lead mb-2">Bollywood · Hip Hop · Contemporary</p>
+            <p class="text-white-50 mb-4">Raleigh, NC · 2026</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a asp-controller="Account" asp-action="Register"
+                   class="btn btn-warning btn-lg fw-bold px-5">
+                    Register Your Team
+                </a>
+                <a asp-controller="Home" asp-action="About"
+                   class="btn btn-outline-light btn-lg px-5">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Competition Info Bar -->
+<div class="bg-warning py-3">
+    <div class="container">
+        <div class="row text-center text-dark">
+            <div class="col-md-4 d-flex align-items-center justify-content-center gap-2">
+                <span class="fs-4">📅</span>
+                <div class="text-start">
+                    <p class="fw-bold mb-0 small">DATE</p>
+                    <p class="mb-0">TBA 2026</p>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center gap-2">
+                <span class="fs-4">📍</span>
+                <div class="text-start">
+                    <p class="fw-bold mb-0 small">LOCATION</p>
+                    <p class="mb-0">Raleigh, NC</p>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center gap-2">
+                <span class="fs-4">🕐</span>
+                <div class="text-start">
+                    <p class="fw-bold mb-0 small">TIME</p>
+                    <p class="mb-0">TBA</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Dance Categories Section -->
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Dance Categories</h2>
+            <p class="text-muted">Three categories. Three chances to shine.</p>
+        </div>
+        <div class="row g-4">
+
+            <!-- Bollywood -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100 text-center">
+                    <div class="card-body p-5">
+                        <div class="fs-1 mb-3">💃</div>
+                        <h3 class="fw-bold text-warning">Bollywood</h3>
+                        <p class="text-muted">A vibrant celebration of South Asian dance and culture featuring colorful costumes, high energy choreography, and expressive storytelling.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hip Hop -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100 text-center">
+                    <div class="card-body p-5">
+                        <div class="fs-1 mb-3">🎤</div>
+                        <h3 class="fw-bold text-warning">Hip Hop</h3>
+                        <p class="text-muted">Raw energy, rhythm, and style. Hip hop performances bring street culture and creative movement to the stage in an explosive showcase.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contemporary -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100 text-center">
+                    <div class="card-body p-5">
+                        <div class="fs-1 mb-3">🎭</div>
+                        <h3 class="fw-bold text-warning">Contemporary</h3>
+                        <p class="text-muted">Fluid, expressive, and emotionally driven. Contemporary dance pushes boundaries and tells stories through movement in unexpected ways.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Age Groups Section -->
+<div class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Age Groups</h2>
+            <p class="text-muted">Competition is open to all age groups.</p>
+        </div>
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h2 class="display-4 fw-bold text-warning">U18</h2>
+                    <h5 class="fw-bold">Under 18</h5>
+                    <p class="text-muted small">Open to all teams where every member is under the age of 18.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h2 class="display-4 fw-bold text-warning">18-25</h2>
+                    <h5 class="fw-bold">18 to 25</h5>
+                    <p class="text-muted small">Open to all teams where every member is between 18 and 25 years old.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h2 class="display-4 fw-bold text-warning">25+</h2>
+                    <h5 class="fw-bold">25 and Over</h5>
+                    <p class="text-muted small">Open to all teams where every member is 25 years of age or older.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call To Action Banner -->
+<div class="bg-dark text-white py-5">
+    <div class="container text-center">
+        <h2 class="display-5 fw-bold mb-3">Ready to Compete?</h2>
+        <p class="lead text-muted mb-4">Registration is free. Show us what you have got.</p>
+        <a asp-controller="Account" asp-action="Register"
+           class="btn btn-warning btn-lg fw-bold px-5">
+            Register Your Team Now
+        </a>
+    </div>
 </div>
